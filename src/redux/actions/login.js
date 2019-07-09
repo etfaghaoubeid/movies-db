@@ -1,10 +1,10 @@
 import {LOGIN} from './actionsTypes'
-export default function(){
+export default function login (){
   return function(dispatch){
     dispatch({
-        payload:'login',
+        payload:'loginnn',
         type: LOGIN
-
     })
   }
+
 }
