@@ -1,18 +1,26 @@
 import React from 'react';
 import './App.css';
 import {connect } from 'react-redux'
-import Login from './Login';
+import {Switch ,Route,Link} from 'react-router-dom'
+import logo from'./logo.svg';
 import MovieList from './components/MovieList';
+import MovieDetails from './components/MovieDetails';
 
 class App extends React.Component {
   componentDidMount(){}
   render(){
     return (
-      <div className="App">
-        <h1>hello</h1>
-        <Login/>
-        <MovieList/>
-      </div>
+      <div className="app">
+        <header className="App-header">
+          <Link to="/">
+            <img src={logo} className="App-logo" alt="logo" />
+          </Link>
+        </header>
+      <Switch>
+        <Route exact path ="/"component={MovieList} />
+        <Route path="/:id" component={MovieDetails}/>
+      </Switch>
+    </div>
     );
 
   }
